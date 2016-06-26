@@ -7,14 +7,14 @@ reload(sys)
 from telebot import types
 sys.setdefaultencoding("utf-8")
 
-bot = telebot.TeleBot('TOKEN')
+bot = telebot.TeleBot('239039356:AAEsX1VuuSqDv3qqHgLmMOcT728LBh5JCQk')
 
 @bot.message_handler(func=lambda message: True)
 def m(m):
     if m.text == '/start' or m.text == '/help':
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=False)
-        key_p = types.KeyboardButton('Admin\xE2\x98\x95\xEF\xB8\x8F')
-        key_c = types.KeyboardButton('Time\xE2\x8F\xB1')
+        key_p = types.KeyboardButton('Admin Of Bot \xE2\x98\x95\xEF\xB8\x8F')
+        key_c = types.KeyboardButton('Time Now \xE2\x8F\xB1')
         sticker = types.KeyboardButton('Sticker')
         markup.add(key_p, key_c)
         markup.add(sticker)
@@ -25,12 +25,12 @@ def m(m):
         print '{}'.format(m.from_user.first_name)
         print '{}'.format(m.from_user.username)
         return
-    if m.text == 'Admin\xE2\x98\x95\xEF\xB8\x8F':
-        bot.send_message(m.chat.id, '@negative_officiall')
+    if m.text == 'Admin Of Bot \xE2\x98\x95\xEF\xB8\x8F':
+        bot.send_message(m.chat.id, 'My Creator Is @Allwen')
         print 'command admin'
         print '{}'.format(m.from_user.first_name)
         print '{}'.format(m.from_user.username)
-    if m.text == 'Time\xE2\x8F\xB1':
+    if m.text == 'Time Now \xE2\x8F\xB1':
         url = "http://api.gpmod.ir/time/"
         response = urllib.urlopen(url)
         data = response.read()
@@ -40,7 +40,7 @@ def m(m):
         print 'command time'
         print '{}'.format(m.from_user.first_name)
         print '{}'.format(m.from_user.username)
-    if m.text == 'Sticker':
+    if m.text == 'Random Sticker':
         urllib.urlretrieve("https://source.unsplash.com/random", "img.jpg")
         bot.send_chat_action(m.chat.id, 'upload_photo')
         bot.send_sticker(m.chat.id, open('img.jpg'))
