@@ -7,7 +7,7 @@ reload(sys)
 from telebot import types
 sys.setdefaultencoding("utf-8")
 
-bot = telebot.TeleBot('239039356:AAEsX1VuuSqDv3qqHgLmMOcT728LBh5JCQk')
+bot = telebot.TeleBot('184199544:AAGoEG9bW0BE0xSyCGUixn7AcTx3MsY9cAk')
 
 @bot.message_handler(func=lambda message: True)
 def m(m):
