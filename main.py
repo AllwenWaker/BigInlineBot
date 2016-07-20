@@ -7,7 +7,7 @@ reload(sys)
 from telebot import types
 sys.setdefaultencoding("utf-8")
 
-bot = telebot.TeleBot('184199544:AAGoEG9bW0BE0xSyCGUixn7AcTx3MsY9cAk')
+bot = telebot.TeleBot('TOKEN)
 
 @bot.message_handler(func=lambda message: True)
 def m(m):
@@ -40,7 +40,7 @@ def m(m):
         print 'command time'
         print '{}'.format(m.from_user.first_name)
         print '{}'.format(m.from_user.username)
-    if m.text == 'Random Sticker':
+    if m.text == 'Sticker':
         urllib.urlretrieve("https://source.unsplash.com/random", "img.jpg")
         bot.send_chat_action(m.chat.id, 'upload_photo')
         bot.send_sticker(m.chat.id, open('img.jpg'))
@@ -52,6 +52,9 @@ def m(m):
         print 'command leave'
         print '{}'.format(m.from_user.first_name)
         print '{}'.format(m.from_user.username)
+    if m.text == 'ker':
+        urllib.urlretrieve("http://s1.picofile.com/file/8260389468/photo_2016_07_08_18_49_01.jpg", "ker.jpg")
+	    bot.send_sticker (m.chat.id, open('ker.jpg')
 
 
 bot.polling(none_stop=True, timeout=20)
